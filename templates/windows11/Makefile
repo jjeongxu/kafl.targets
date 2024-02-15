@@ -15,4 +15,4 @@ build: ansible
 
 import:
 	vagrant box remove kafl_windows || true
-	vagrant box add packer_windows_libvirt.box --name kafl_windows
+	vagrant box add packer_windows_libvirt_amd64.box --name kafl_windows
