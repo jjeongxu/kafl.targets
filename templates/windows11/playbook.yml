@@ -106,7 +106,7 @@
       args:
         chdir: "{{ ansible_facts['env']['TEMP'] }}"
 
-    - name: install WDK VSIX extension
+    - name: Install WDK VSIX extension
       win_command:
         cmd: "{{ vsix_installer | ansible.windows.quote }} /quiet /admin /logFile:C:\\wdk_vsix.log WDK.vsix"
       args:
@@ -114,3 +114,6 @@
 
     - name: Enable Testsigning
       win_command: Bcdedit.exe -set TESTSIGNING ON
+
+    - name: Disable password expiration
+      win_command: net user Vagrant /expires:never
