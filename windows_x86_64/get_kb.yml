@@ -1,0 +1,12 @@
+- name: Get installed KB updates
+  hosts: all
+  tasks:
+    - name: Retrieve installed updates
+      win_shell: |
+        Get-HotFix | Select-Object -Property Description, HotFixID, InstalledOn
+      register: hotfix_result
+
+    - name: Display installed updates
+      debug:
+        var: hotfix_result.stdout_lines
+

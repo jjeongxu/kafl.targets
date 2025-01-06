@@ -11,6 +11,8 @@ ansible: $(ROOT_DIR)/venv/bin/ansible-playbook
 
 init:
 	vagrant up --no-provision
+	bash -c 'source ../venv/bin/activate && ./update_windows.sh'
+	bash -c 'source ../venv/bin/activate && ./get_kb.sh'
 	vagrant snapshot save 'ready_provision'
 
 compile:

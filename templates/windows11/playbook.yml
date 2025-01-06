@@ -111,6 +111,7 @@
         cmd: "{{ vsix_installer | ansible.windows.quote }} /quiet /admin /logFile:C:\\wdk_vsix.log WDK.vsix"
       args:
         chdir: "{{ wdk_vsix_dir }}"
+      ignore_errors: yes
 
     - name: Enable Testsigning
       win_command: Bcdedit.exe -set TESTSIGNING ON

@@ -71,7 +71,7 @@ variable "memory" {
 
 variable "vm_name" {
   type    = string
-  default = "win7x64"
+  default = "win11x64"
 }
 
 variable "winrm_password" {
